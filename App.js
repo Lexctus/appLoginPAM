@@ -1,21 +1,58 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator, HeaderTitle } from 'react-navigation-stack';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+//Importando telas
+import TelaLogin from './scr/paginas/TelaLogin';
+import TelaHome from './scr/paginas/TelaHome';
+import TelaCadastro from './scr/paginas/TelaCadastro';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const AppNavigator = createStackNavigator({
+
+  'Login':{
+    screen: TelaLogin,
+    navigationOptions:{
+      title: 'Login'
+    }
   },
-});
+
+  'Home':{
+    screen: TelaHome,
+    navigationOptions:{
+      title: 'Página Inicial'
+    }
+  },
+
+  'Cadastro':{
+    screen: TelaCadastro,
+    navigationOptions:{
+      title: 'Página de Cadastro'
+    }
+  }
+}, {
+  HeaderTitle: {
+    backgroundColor: '#00ff7f',
+    border_bottom_width: 10
+  },
+  
+})
+
+const AppConteiner = createAppContainer(AppNavigator);
+export default AppConteiner;
+
+// export default function App() {
+//   return (
+//     <View style={styles.container}>
+//       <Text>Em progresso</Text>
+//       <StatusBar style="auto" />
+//     </View>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });

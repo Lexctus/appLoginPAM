@@ -2,4 +2,9 @@
 
 ## Atividade
 
-Foi criado um app em react navive, utilizando o firebase, com 3 telas: 1 para login, 1 para cadastro e 1 para página incial.  
+Foi criado um app em react native, utilizando o firebase, que recebe o e-mail e senha de usuário e faz a autenticação. 
+O app conta com 3 telas:
+
+- Login;
+- Cadastro;
+- Home.
